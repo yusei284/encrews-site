@@ -12,7 +12,7 @@
       <img
         src="/images/hero_b.jpg"
         alt=""
-        class="w-full h-[112%] object-cover scale-[1.06] hero-img-zoom"
+        class="w-full h-[112%] object-cover scale-[1.06] hero-img-zoom hero-img-pos"
         loading="eager"
         decoding="async"
       />
@@ -66,8 +66,8 @@
       <div class="mt-12 grid grid-cols-12 gap-8 items-end">
         <p class="hero-fade hero-d3 col-span-12 md:col-span-6 text-[14px] md:text-[15px] leading-[2] text-white/90 font-light">
           3.11 で動き出して、副業7つ全部失敗して、それでも漕ぎ続けてきた航海の記録です。<br/>
-          九州大学で学生団体を立ち上げ、NTT西日本を出て、屋号「UMEマーケティング」で<br/>
-          関西の現場を渡り歩き、2021年に大阪で encrews を法人化した。<br/>
+          九州大学で学生団体を立ち上げ、NTT西日本を出て、関西で店舗・出版の立ち上げを連続稼働。<br/>
+          2021年に大阪で encrews を法人化、2025年に東京へ。<br/>
           ご縁(<span class="italic">en</span>)でつながり、仲間(<span class="italic">crews</span>)と漕ぎ出す。それだけは、ずっと変わっていません。
         </p>
         <div class="hero-fade hero-d4 col-span-12 md:col-span-4 md:col-start-9">
@@ -105,6 +105,9 @@
   }
 
   .hero-img-wrap { will-change: transform; }
+  /* 人物が中央左で歩いている構図。モバイル縦では人物を画面中央に寄せる */
+  .hero-img-pos { object-position: 38% 60%; }
+  @media (min-width: 768px) { .hero-img-pos { object-position: center 50%; } }
   .hero-mouse-shift {
     transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
     will-change: transform;
