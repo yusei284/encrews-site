@@ -1,0 +1,173 @@
+---
+const en = [
+  { jp: "縁", en: "Connection", body: "ご縁でつながる、すべての出会い。" },
+  { jp: "援", en: "Empower",    body: "仲間を、現場を、後押しする力。" },
+  { jp: "円", en: "Currency",   body: "信頼と価値を、循環させる。" },
+];
+const crews = [
+  { jp: "仲間", en: "Companions", body: "一人で漕がない、信頼できる相棒たち。" },
+  { jp: "航海", en: "Voyage",     body: "未踏の海へ、長期で漕ぎ続ける旅。" },
+];
+---
+<section id="name" class="py-32 md:py-48 border-t border-line bg-white relative overflow-hidden">
+  <!-- Background subtle gradient -->
+  <div class="absolute inset-0 pointer-events-none"
+       style="background: radial-gradient(ellipse at 20% 50%, rgba(0,0,0,0.025), transparent 60%);"></div>
+
+  <div class="container-x relative">
+    <div class="grid grid-cols-12 gap-8 mb-20 md:mb-28">
+      <div class="col-span-12 md:col-span-3">
+        <p class="text-eyebrow">— Etymology / The Name</p>
+      </div>
+      <div class="col-span-12 md:col-span-9">
+        <h2 class="text-display text-[36px] md:text-[52px] lg:text-[72px] text-ink max-w-4xl">
+          社名に込めた、<br/>
+          ふたつの言葉。
+        </h2>
+      </div>
+    </div>
+
+    <!-- The big "en + crews" reveal -->
+    <div class="relative py-12 md:py-20 my-12 md:my-20 border-y border-line group/stage" data-name-stage>
+      <div class="text-center relative">
+        <div class="inline-flex items-baseline gap-3 md:gap-6 lg:gap-10 leading-none flex-wrap justify-center stage-words" style="line-height:1;">
+          <span class="name-part name-en text-[56px] sm:text-[120px] md:text-[180px] lg:text-[240px] xl:text-[280px] font-light tracking-[-0.06em] text-ink" data-name-en>en</span>
+          <span class="name-plus text-[28px] sm:text-[60px] md:text-[90px] lg:text-[120px] font-extralight text-ink-3" data-name-plus>+</span>
+          <span class="name-part name-crews text-[56px] sm:text-[120px] md:text-[180px] lg:text-[240px] xl:text-[280px] font-light tracking-[-0.06em] text-ink" data-name-crews>crews</span>
+        </div>
+        <p class="mt-12 font-mono text-[11px] tracking-[0.3em] uppercase text-ink-3" data-name-result>
+          <span class="inline-flex items-center gap-2">
+            <span class="w-6 h-px bg-ink-3"></span>
+            <span data-name-result-text>= ENCREWS</span>
+            <span class="w-6 h-px bg-ink-3"></span>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Two columns: en + crews meanings -->
+    <div class="grid grid-cols-12 gap-8 md:gap-16 mt-16 md:mt-24">
+      <!-- En side -->
+      <div class="col-span-12 md:col-span-6 name-fade name-fade-1">
+        <div class="flex items-baseline gap-4 mb-8 pb-4 border-b border-line">
+          <span class="text-[44px] md:text-[60px] font-light tracking-[-0.04em] text-ink leading-none">en</span>
+          <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-3">— 3 meanings</p>
+        </div>
+        <ul class="space-y-8">
+          {en.map((m) => (
+            <li class="flex gap-6 items-baseline">
+              <span class="text-[36px] md:text-[44px] font-light text-ink leading-none w-12 shrink-0">{m.jp}</span>
+              <div>
+                <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-ink-3 mb-1">{m.en}</p>
+                <p class="text-[14px] leading-[1.85] text-ink-2 font-light">{m.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Crews side -->
+      <div class="col-span-12 md:col-span-6 name-fade name-fade-2">
+        <div class="flex items-baseline gap-4 mb-8 pb-4 border-b border-line">
+          <span class="text-[44px] md:text-[60px] font-light tracking-[-0.04em] text-ink leading-none">crews</span>
+          <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-3">— 2 meanings</p>
+        </div>
+        <ul class="space-y-8">
+          {crews.map((m) => (
+            <li class="flex gap-6 items-baseline">
+              <span class="text-[28px] md:text-[34px] font-light text-ink leading-none w-12 shrink-0">{m.jp}</span>
+              <div>
+                <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-ink-3 mb-1">{m.en}</p>
+                <p class="text-[14px] leading-[1.85] text-ink-2 font-light">{m.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- The synthesis statement -->
+    <div class="mt-24 md:mt-32 max-w-4xl mx-auto text-center name-fade name-fade-3">
+      <p class="font-mono text-[10px] tracking-[0.3em] uppercase text-ink-3 mb-6">— Together</p>
+      <p class="text-[20px] md:text-[28px] lg:text-[36px] font-light tracking-tight leading-[1.5] text-ink">
+        仲間と共に、<span class="text-ink-3">ご縁</span>を大切に、<br/>
+        世の中に<span class="text-ink-3">働きかけ</span>、<br/>
+        大海原へ<span class="font-medium">航海</span>していく。
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Big name reveal */
+  .name-part {
+    opacity: 0;
+    transform: translateY(60px);
+    display: inline-block;
+    filter: blur(8px);
+    will-change: opacity, transform, filter;
+    transition: transform 0.8s cubic-bezier(.2,.8,.2,1);
+  }
+  .name-en.is-visible    { animation: nameSlide 1.6s 0.0s cubic-bezier(.16,.84,.2,1) forwards; }
+  .name-plus {
+    opacity: 0;
+    transform: scale(0.4) rotate(-180deg);
+    transition: opacity 0.8s 0.7s cubic-bezier(.16,.84,.2,1),
+                transform 0.9s 0.7s cubic-bezier(.16,.84,.2,1);
+    display: inline-block;
+  }
+  .name-plus.is-visible  { opacity: 1; transform: scale(1) rotate(0deg); }
+  .name-crews.is-visible { animation: nameSlide 1.6s 0.5s cubic-bezier(.16,.84,.2,1) forwards; }
+  @keyframes nameSlide {
+    from { opacity: 0; transform: translateY(60px); filter: blur(8px); }
+    to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+  }
+
+  /* Hover interaction: en/crews lean toward + */
+  .stage-words { transition: gap 0.6s cubic-bezier(.2,.8,.2,1); }
+  [data-name-stage]:hover .name-en    { transform: translateX(8px); }
+  [data-name-stage]:hover .name-crews { transform: translateX(-8px); }
+  [data-name-stage]:hover .name-plus  { transform: scale(1.15) rotate(90deg); color: var(--color-ink); }
+  .name-plus { transition-property: opacity, transform, color; }
+  .name-en, .name-crews { transition: transform 0.6s cubic-bezier(.2,.8,.2,1); }
+
+  [data-name-result] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s 1.6s, transform 0.8s 1.6s;
+  }
+  [data-name-result].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .name-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s cubic-bezier(.2,.8,.2,1), transform 0.9s cubic-bezier(.2,.8,.2,1);
+  }
+  .name-fade.is-visible { opacity: 1; transform: translateY(0); }
+  .name-fade-1.is-visible { transition-delay: 1.9s; }
+  .name-fade-2.is-visible { transition-delay: 2.1s; }
+  .name-fade-3.is-visible { transition-delay: 2.4s; }
+</style>
+
+<script is:inline>
+  // Trigger reveal when section enters viewport
+  (function () {
+    const stage = document.querySelector("[data-name-stage]");
+    if (!stage) return;
+    const targets = document.querySelectorAll(
+      "[data-name-en], [data-name-plus], [data-name-crews], [data-name-result], .name-fade"
+    );
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          targets.forEach((el) => el.classList.add("is-visible"));
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
+    io.observe(stage);
+  })();
+</script>

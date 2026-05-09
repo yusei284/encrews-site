@@ -1,0 +1,22 @@
+---
+const stats = [
+  { num: "06", label: "Business Domains", sub: "横断する事業領域" },
+  { num: "120+", label: "Partners", sub: "並走するチームと仲間" },
+  { num: "12", label: "Active Projects", sub: "進行中プロジェクト" },
+  { num: "2026", label: "Voyage Year", sub: "次なる船出の年" },
+];
+---
+<section class="py-24 md:py-32 bg-ink text-white">
+  <div class="container-x">
+    <p class="text-[11px] tracking-[0.3em] uppercase opacity-60 mb-12">— Numbers</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8">
+      {stats.map((s) => (
+        <div>
+          <p class="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-tight italic">{s.num}</p>
+          <p class="mt-4 text-sm font-medium tracking-wide">{s.label}</p>
+          <p class="mt-1 text-xs opacity-60 tracking-wide">{s.sub}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+const nav = [
+  { label: "story", href: "#story" },
+  { label: "work", href: "#work" },
+  { label: "cases", href: "#cases" },
+  { label: "contact", href: "#contact" },
+];
+---
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-bg/80 border-b border-line">
+  <div class="container-x flex items-center justify-between py-4 font-mono text-[12px] tracking-tight">
+    <a href="/c" class="flex items-center gap-2 text-ink">
+      <span class="opacity-40">~/</span>
+      <span class="font-medium">encrews</span>
+      <span class="opacity-40">/</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-ink/70">
+      {nav.map((n) => (
+        <a href={n.href} class="hover:text-ink transition-colors">
+          <span class="opacity-40">--</span>{n.label}
+        </a>
+      ))}
+    </nav>
+    <div class="hidden md:flex items-center gap-2 text-ink-3">
+      <span class="w-2 h-2 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span>v.c / 2026</span>
+    </div>
+  </div>
+</header>

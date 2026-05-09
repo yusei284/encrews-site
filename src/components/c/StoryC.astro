@@ -1,0 +1,53 @@
+---
+const commits = [
+  { hash: "a1b2c34", date: "2014-04-01", scope: "career", type: "feat", subject: "joined NTT group as engineer", body: "学生時代から続けたコードを仕事に。インフラと業務システムの設計・開発に携わりながら、大企業の中で「人と事業」がどう動くかを4年間観察。" },
+  { hash: "8d3e9f1", date: "2018-04-01", scope: "company", type: "init", subject: "founded encrews inc.", body: "「自分の手で事業をつくる側に回りたい」と退職。一人と一台のパソコンから始まる。IT支援を皮切りにPR・人材・コミュニティへ拡張。" },
+  { hash: "f47a2b8", date: "2020-09-15", scope: "service", type: "feat", subject: "launched cross-domain support", body: "クライアントの事業立ち上げに、技術と発信の両輪で並走。「答えを売る」のではなく「一緒に漕ぎ出す」スタンスが定着していく。" },
+  { hash: "c9e1d56", date: "2023-06-01", scope: "service", type: "feat", subject: "started f&b store-launch program", body: "デスクの向こうの事業から、街に立つ事業へ。店舗開発・採用・現場オペレーション、すべてに足を運んで関わる「リアル伴走」を始める。" },
+  { hash: "0xnow",   date: "2026-06-08", scope: "flagship", type: "ship", subject: "the_bagel @ kagurazaka — grand open", body: "米粉×グラスフェッドバターの新ジャンル・ベーグル専門店。物件選定からブランディング、採用、運営まで、Encrewsが全工程に並走するフラッグシップ案件。" },
+];
+const typeColor = {
+  feat: "bg-emerald-600/10 text-emerald-700 border-emerald-700/20",
+  init: "bg-blue-600/10 text-blue-700 border-blue-700/20",
+  ship: "bg-amber-600/10 text-amber-700 border-amber-700/20",
+};
+---
+<section id="story" class="py-32 md:py-48 border-t border-line">
+  <div class="container-x">
+    <div class="grid grid-cols-12 gap-8 mb-20 md:mb-28">
+      <div class="col-span-12 md:col-span-3">
+        <p class="font-mono text-[11px] tracking-tight text-ink-3">{"// 02 — git log"}</p>
+      </div>
+      <div class="col-span-12 md:col-span-9">
+        <h2 class="text-display text-[36px] md:text-[52px] lg:text-[72px] text-ink max-w-4xl">
+          A founder's<br/>commit history.
+        </h2>
+        <p class="mt-6 font-mono text-[12px] text-ink-3">$ git log --author="yusei" --reverse</p>
+      </div>
+    </div>
+
+    <ol class="border border-line rounded-sm overflow-hidden">
+      {commits.map((c, i) => (
+        <li class={`grid grid-cols-12 gap-4 md:gap-6 p-6 md:p-8 ${i !== commits.length - 1 ? "border-b border-line" : ""} font-mono group hover:bg-ink/[0.015] transition-colors`}>
+          <div class="col-span-12 md:col-span-2 flex items-start gap-2 text-[11px] tracking-tight">
+            <span class="text-amber-700/80">{c.hash}</span>
+          </div>
+          <div class="col-span-12 md:col-span-2 text-[11px] tabular-nums text-ink-3 tracking-tight">{c.date}</div>
+          <div class="col-span-12 md:col-span-1">
+            <span class={`inline-block px-2 py-[2px] text-[10px] tracking-tight border rounded-sm ${typeColor[c.type] ?? "bg-ink/5 text-ink-2 border-line"}`}>{c.type}</span>
+          </div>
+          <div class="col-span-12 md:col-span-7">
+            <p class="text-[14px] md:text-[16px] text-ink font-medium tracking-tight">
+              <span class="text-ink-3">{`(${c.scope}): `}</span>{c.subject}
+            </p>
+            <p class="mt-3 text-[13px] leading-[1.95] text-ink-2 font-sans font-light max-w-2xl">{c.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="mt-8 font-mono text-[12px] text-ink-3">
+      <span class="text-emerald-700">●</span> HEAD → main, origin/main · 5 commits, contributors: many.
+    </div>
+  </div>
+</section>

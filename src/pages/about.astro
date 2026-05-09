@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderB from "../components/b/HeaderB.astro";
+import Footer from "../components/Footer.astro";
+
+const fields = [
+  { label: "商号",       value: "encrews" },
+  { label: "設立",       value: "2021年4月1日（大阪で創業）" },
+  { label: "決算月",     value: "8月末締め（第6期進行中）" },
+  { label: "代表者",     value: "福地ゆうせい" },
+  { label: "本店所在地", value: "〒135-0021 東京都江東区白河3-18-11（2025年9月、大阪より移転）" },
+  { label: "事業内容",   value: "IT開発・プロダクト設計／店舗立ち上げ／ブランディング・PR／出版プロデュース／人材事業" },
+  { label: "連絡先",     value: "y.fukuchi@encrews.co.jp" },
+];
+---
+<Layout title="About | encrews" description="株式会社 encrews の会社概要。商号・設立・代表者・所在地・事業内容。">
+  <HeaderB />
+  <main class="bg-bg">
+    <section class="pt-40 pb-20 md:pt-48 md:pb-28">
+      <div class="container-x">
+        <p class="text-eyebrow mb-8">— About</p>
+        <h1 class="text-display text-[44px] md:text-[68px] lg:text-[92px] text-ink max-w-4xl">
+          Company.
+        </h1>
+        <p class="mt-6 font-mono text-[12px] text-ink-3 tracking-tight">— Built on en. Driven by crews.</p>
+      </div>
+    </section>
+
+    <section class="pb-32 md:pb-48">
+      <div class="container-x">
+        <div class="border-t border-line">
+          {fields.map((f) => (
+            <div class="grid grid-cols-12 gap-8 py-7 md:py-9 border-b border-line">
+              <div class="col-span-12 md:col-span-3">
+                <p class="text-[11px] tracking-[0.18em] uppercase text-ink-3 font-medium">{f.label}</p>
+              </div>
+              <div class="col-span-12 md:col-span-9">
+                <p class="text-[15px] md:text-[17px] leading-[1.85] text-ink font-light">{f.value}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-20 max-w-3xl">
+          <p class="text-eyebrow mb-4">— A note from the founder</p>
+          <p class="text-[16px] md:text-[18px] leading-[2] text-ink-2 font-light">
+            ご縁(<span class="italic">en</span>)でつながり、仲間(<span class="italic">crews</span>)と漕ぎ出す。<br/>
+            一人で完結する事業ではなく、信頼できる相棒たちと、未踏の海を長期で漕ぎ続ける会社でありたい。<br/>
+            それが、社名にした願いであり、これから先も変わらない指針です。
+          </p>
+          <p class="mt-8 text-[13px] text-ink-3 font-mono tracking-tight">— 福地ゆうせい / 代表</p>
+        </div>
+
+        <div class="mt-20 flex flex-wrap items-center gap-4">
+          <a href="/" class="inline-flex items-center gap-2 text-[13px] tracking-tight border-b border-ink pb-1 hover:gap-4 transition-all">
+            ← Back to Home
+          </a>
+          <span class="opacity-30">·</span>
+          <a href="mailto:y.fukuchi@encrews.co.jp" class="inline-flex items-center gap-2 text-[13px] tracking-tight border-b border-ink pb-1 hover:gap-4 transition-all">
+            Get in touch →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,41 @@
+---
+const news = [
+  { date: "2026.05.08", cat: "News", title: "コーポレートサイトをリニューアルしました" },
+  { date: "2026.04.20", cat: "Project", title: "THE BAGEL 神楽坂店のグランドオープン日程を発表" },
+  { date: "2026.03.15", cat: "Event", title: "月次ビジネスセッション「Founders' Notebook」第12回を開催" },
+  { date: "2026.02.10", cat: "Career", title: "新卒・中途メンバーの募集を開始しました" },
+];
+---
+<section id="news" class="py-32 md:py-48 bg-white border-t border-line">
+  <div class="container-x">
+    <div class="grid grid-cols-12 gap-8 mb-16 md:mb-20">
+      <div class="col-span-12 md:col-span-3">
+        <p class="text-[11px] tracking-[0.3em] uppercase text-ink-3">— News</p>
+      </div>
+      <div class="col-span-12 md:col-span-9 flex items-end justify-between flex-wrap gap-4">
+        <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.15] tracking-tight font-light">
+          最新の<span class="italic">便り</span>
+        </h2>
+        <a href="#" class="text-sm tracking-wide hover:opacity-60 inline-flex items-center gap-2">
+          View All
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.2"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <ul class="border-t border-line">
+      {news.map((n) => (
+        <li class="border-b border-line">
+          <a href="#" class="grid grid-cols-12 gap-4 py-6 md:py-8 hover:bg-bg-2 transition-colors px-2 -mx-2 group">
+            <div class="col-span-3 md:col-span-2 font-mono text-xs md:text-sm text-ink-3 tracking-wide">{n.date}</div>
+            <div class="col-span-3 md:col-span-2 text-xs md:text-sm uppercase tracking-[0.15em] text-ink-3">{n.cat}</div>
+            <div class="col-span-6 md:col-span-7 text-sm md:text-base font-light">{n.title}</div>
+            <div class="col-span-12 md:col-span-1 flex justify-end">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all"><path d="M4 16L16 4M16 4H8M16 4V12" stroke="currentColor" stroke-width="1"/></svg>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

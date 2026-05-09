@@ -1,0 +1,27 @@
+---
+const nav = [
+  { label: "Story", href: "#story" },
+  { label: "Work", href: "#work" },
+  { label: "Cases", href: "#cases" },
+  { label: "Contact", href: "#contact" },
+];
+---
+<header class="fixed top-0 inset-x-0 z-50">
+  <div class="container-x flex items-center justify-between py-5">
+    <a href="/" class="flex items-center gap-2">
+      <span class="text-[15px] font-medium tracking-tight text-ink">Encrews</span>
+      <span class="text-[10px] tracking-[0.2em] uppercase text-ink-3 hidden sm:inline">— Inc.</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-9 text-[13px] tracking-tight text-ink/80">
+      {nav.map((n) => (
+        <a href={n.href} class="hover:text-ink transition-colors">{n.label}</a>
+      ))}
+    </nav>
+    <div class="hidden md:block text-[12px] tracking-tight text-ink-3">
+      Tokyo / 2026
+    </div>
+    <button class="md:hidden text-ink" aria-label="menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 8h16M3 14h16" stroke="currentColor" stroke-width="1.2"/></svg>
+    </button>
+  </div>
+</header>

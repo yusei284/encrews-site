@@ -1,0 +1,66 @@
+---
+const works = [
+  {
+    no: "Case 01",
+    title: "THE BAGEL 神楽坂",
+    cat: "Store Launch · Brand · PR",
+    body: "米粉×グラスフェッドバターの新ジャンルベーグル専門店を、ブランド設計から物件・内装・メニュー・採用・PRまで丸ごと立ち上げ。グランドオープンに向け伴走中。",
+    img: "/images/case1.jpg",
+  },
+  {
+    no: "Case 02",
+    title: "Corporate Studio",
+    cat: "IT Development · Talent",
+    body: "成長企業の社内基盤刷新、新卒・中途採用、組織設計までをワンチームで支援。人と仕組みの両軸で事業の伸びをつくる。",
+    img: "/images/case2.jpg",
+  },
+  {
+    no: "Case 03",
+    title: "Founders' Notebook",
+    cat: "Community · Brand",
+    body: "毎月開催のクリエイター/起業家向けビジネスセッション。次の挑戦のきっかけを生む、月1の合言葉のような場として運営。",
+    img: "/images/case3.jpg",
+  },
+];
+---
+<section id="works" class="py-32 md:py-48 bg-white">
+  <div class="container-x">
+    <div class="grid grid-cols-12 gap-8 mb-16 md:mb-24">
+      <div class="col-span-12 md:col-span-3">
+        <p class="text-[11px] tracking-[0.3em] uppercase text-ink-3">— Works</p>
+      </div>
+      <div class="col-span-12 md:col-span-9 flex items-end justify-between flex-wrap gap-4">
+        <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.15] tracking-tight font-light">
+          <span class="italic">航海日誌</span>から、<br/>
+          いくつかの記録を。
+        </h2>
+        <a href="#" class="text-sm tracking-wide hover:opacity-60 transition-opacity inline-flex items-center gap-2">
+          View All
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.2"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="space-y-24 md:space-y-32">
+      {works.map((w, i) => (
+        <article class={`grid grid-cols-12 gap-8 items-center ${i % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""}`}>
+          <div class="col-span-12 md:col-span-7">
+            <div class="aspect-[4/3] overflow-hidden bg-bg-2">
+              <img src={w.img} alt={w.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" loading="lazy"/>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-5">
+            <p class="font-mono text-xs tracking-wider text-ink-3 mb-4">{w.no}</p>
+            <h3 class="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-4">{w.title}</h3>
+            <p class="text-xs tracking-[0.2em] uppercase text-ink-3 mb-6">{w.cat}</p>
+            <p class="text-base leading-loose text-ink-2 font-light">{w.body}</p>
+            <a href="#" class="mt-8 inline-flex items-center gap-2 text-sm border-b border-ink pb-1 hover:gap-4 transition-all">
+              Read Story
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.2"/></svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

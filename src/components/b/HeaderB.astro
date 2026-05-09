@@ -1,0 +1,77 @@
+---
+const nav = [
+  { label: "About",   href: "/about" },
+  { label: "Story",   href: "/#story" },
+  { label: "Work",    href: "/#work" },
+  { label: "Cases",   href: "/#cases" },
+  { label: "Contact", href: "/#contact" },
+];
+---
+<header class="fixed top-0 inset-x-0 z-50 mix-blend-difference">
+  <div class="container-x flex items-center justify-between py-5 text-white">
+    <a href="/b" class="flex items-center gap-2">
+      <span class="text-[15px] font-medium tracking-tight lowercase">encrews</span>
+      <span class="text-[10px] tracking-[0.2em] uppercase opacity-60 hidden sm:inline">— Inc.</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-9 text-[13px] tracking-tight">
+      {nav.map((n) => (<a href={n.href} class="hover:opacity-60 transition-opacity">{n.label}</a>))}
+    </nav>
+    <!-- Mobile menu toggle -->
+    <button id="nav-toggle" class="md:hidden flex items-center gap-2 text-[12px] tracking-[0.15em] uppercase" aria-label="メニュー" aria-expanded="false">
+      Menu
+    </button>
+  </div>
+</header>
+
+<!-- Mobile nav overlay (outside mix-blend header) -->
+<div id="nav-overlay" class="fixed inset-0 z-[45] bg-[#0a0a0a] flex flex-col justify-center px-8 translate-x-full transition-transform duration-500 ease-[cubic-bezier(.16,.84,.2,1)]" aria-hidden="true">
+  <nav class="flex flex-col gap-10">
+    {nav.map((n, i) => (
+      <a href={n.href}
+         class="nav-overlay-item text-[36px] font-light tracking-[-0.03em] text-white opacity-0 translate-y-6 transition-none"
+         style={`transition-delay: ${0.06 * i}s`}
+         data-nav-close>
+        {n.label}
+      </a>
+    ))}
+  </nav>
+  <p class="absolute bottom-10 left-8 font-mono text-[10px] tracking-[0.2em] uppercase text-white/30">encrews — Inc. · 2026</p>
+</div>
+
+<script is:inline>
+  (function () {
+    const toggle = document.getElementById("nav-toggle");
+    const overlay = document.getElementById("nav-overlay");
+    const items = overlay?.querySelectorAll(".nav-overlay-item");
+    let open = false;
+
+    function openMenu() {
+      open = true;
+      overlay.classList.remove("translate-x-full");
+      overlay.setAttribute("aria-hidden", "false");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.textContent = "Close";
+      document.body.style.overflow = "hidden";
+      items?.forEach((el, i) => {
+        el.style.transition = `opacity 0.5s ${0.1 + i * 0.06}s, transform 0.5s ${0.1 + i * 0.06}s`;
+        el.classList.remove("opacity-0", "translate-y-6");
+      });
+    }
+
+    function closeMenu() {
+      open = false;
+      items?.forEach((el) => {
+        el.style.transition = "none";
+        el.classList.add("opacity-0", "translate-y-6");
+      });
+      overlay.classList.add("translate-x-full");
+      overlay.setAttribute("aria-hidden", "true");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "Menu";
+      document.body.style.overflow = "";
+    }
+
+    toggle?.addEventListener("click", () => (open ? closeMenu() : openMenu()));
+    overlay?.querySelectorAll("[data-nav-close]").forEach((el) => el.addEventListener("click", closeMenu));
+  })();
+</script>

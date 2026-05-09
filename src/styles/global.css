@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    "Inter Tight",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "SF Pro Display",
+    "Helvetica Neue",
+    "Noto Sans JP",
+    system-ui,
+    sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+
+  --color-bg: #fbfbfa;
+  --color-ink: #0a0a0a;
+  --color-ink-2: #404040;
+  --color-ink-3: #909090;
+  --color-line: #e6e6e4;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01", "cv11", "palt";
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    letter-spacing: -0.011em;
+  }
+  section[id] { scroll-margin-top: 80px; }
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-bg);
+  }
+  /* タイポ階層：必要最小限・極細を活用 */
+  .text-display {
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+  .text-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+    font-weight: 500;
+  }
+  .hairline {
+    background: var(--color-line);
+    height: 1px;
+    width: 100%;
+  }
+}
+
+@utility container-x {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  max-width: 1320px;
+}
+@media (min-width: 640px)  { .container-x { padding-inline: 2rem; } }
+@media (min-width: 768px)  { .container-x { padding-inline: 3rem; } }
+@media (min-width: 1024px) { .container-x { padding-inline: 4rem; } }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in    { animation: fade-in 1.2s cubic-bezier(.2,.8,.2,1) both; }
+.fade-in-1  { animation: fade-in 1.2s .15s cubic-bezier(.2,.8,.2,1) both; }
+.fade-in-2  { animation: fade-in 1.2s .3s cubic-bezier(.2,.8,.2,1) both; }
+.fade-in-3  { animation: fade-in 1.2s .45s cubic-bezier(.2,.8,.2,1) both; }
+.fade-in-4  { animation: fade-in 1.2s .6s cubic-bezier(.2,.8,.2,1) both; }

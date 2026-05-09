@@ -1,0 +1,45 @@
+---
+const services = [
+  { no: "01", en: "IT & Product",  jp: "IT開発・プロダクト設計", body: "NTT西日本時代から積んできた本業。受託も自社プロダクトも、システムを事業の筋肉として作る。" },
+  { no: "02", en: "Store Launch",  jp: "店舗立ち上げ",           body: "BAR・セレクトショップ・ヘッドスパ・ベーカリー。現場に立ち、立ち上げから運営まで連続で稼働させる。" },
+  { no: "03", en: "Brand & PR",    jp: "ブランディング・PR",     body: "コピー・SNS・PR・SEO。事業の輪郭を言葉にして、必要な人に届くように届ける。" },
+  { no: "04", en: "Publishing",    jp: "出版プロデュース",       body: "累計18冊・累計20万部。著者の世界観を本にして、講演・買い回り・SEOで広げる。" },
+  { no: "05", en: "Talent",        jp: "人材事業",               body: "有料職業紹介事業を2社運営中。マッチングだけでなく、組織側の伴走まで。" },
+];
+---
+<section id="work" class="py-32 md:py-48 border-t border-line">
+  <div class="container-x">
+    <div class="grid grid-cols-12 gap-8 mb-20 md:mb-28">
+      <div class="col-span-12 md:col-span-3">
+        <p class="text-eyebrow">03 — What we do</p>
+      </div>
+      <div class="col-span-12 md:col-span-9">
+        <h2 class="text-display text-[36px] md:text-[52px] lg:text-[72px] text-ink max-w-3xl">
+          五つの領域、<br/>
+          ひとつの伴走姿勢。
+        </h2>
+        <p class="mt-6 text-[12px] tracking-tight text-ink-3 font-mono">— What we actually do, not what we say.</p>
+      </div>
+    </div>
+
+    <ul>
+      {services.map((s, i) => (
+        <li class={`grid grid-cols-12 gap-8 py-10 md:py-12 border-t border-line ${i === services.length - 1 ? "border-b" : ""} group hover:bg-ink/[0.015] transition-colors`}>
+          <div class="col-span-2 md:col-span-1 text-[11px] tabular-nums tracking-tight text-ink-3 pt-1">{s.no}</div>
+          <div class="col-span-10 md:col-span-4">
+            <p class="text-[20px] md:text-[28px] font-light tracking-tight text-ink">{s.en}</p>
+            <p class="text-[12px] mt-1 text-ink-3 tracking-tight">{s.jp}</p>
+          </div>
+          <div class="col-span-12 md:col-span-6">
+            <p class="text-[14px] leading-[1.9] text-ink-2 font-light max-w-xl">{s.body}</p>
+          </div>
+          <div class="col-span-12 md:col-span-1 flex md:justify-end items-start pt-2">
+            <span class="text-ink-3 group-hover:text-ink group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1"/></svg>
+            </span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

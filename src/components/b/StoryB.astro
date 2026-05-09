@@ -1,0 +1,69 @@
+---
+const chapters = [
+  { year: "2011", tag: "Roots", sub: "It started after 3.11.", title: "九州大学で、学生団体 iTOP を立ち上げた。", body: "東日本大震災の年、大学3年で「学生でも、地域に何かできるはずだ」と動いた。福岡発の学生団体 iTOP を立ち上げ、代表として1年で100名規模に。糸島のまちづくりに踏み込んだ原体験は、今もiTOPが九州最大の学生団体として続いていることに残っている。ご縁(en)で仲間(crews)を集める、原点はここにある。", img: "/images/story_2011.jpg" },
+  { year: "2012", tag: "Engineer", sub: "Out of Kyushu, into the corridor.", title: "九州大学を出て、NTT西日本へ。", body: "エンジニアとしてキャリアを始めた。法人の現場で、システムが事業を回す筋肉だと知った4年間。", img: "/images/story_2014.jpg" },
+  { year: "2013–2015", tag: "Failed × 7", sub: "Seven swings. Seven misses.", title: "在職中、副業を7つ仕掛けて、7つ全部失敗した。", body: "全部外したことで、「事業を成立させる構造」を考えるようになった。数より、何が外れたかを言葉にできるかが残った。", img: "/images/story_2017.jpg" },
+  { year: "2016", tag: "The UME Years", sub: "Operator in Osaka.", title: "NTTを辞めて、屋号「UMEマーケティング」で独立。", body: "関西で、Bar・セレクトショップ・ヘッドスパ・出版プロデュースの立ち上げに入った。Bar ではマーケ・集客・イベント企画、時にカウンターでバーテンダー。ヘッドスパではスタッフ育成、商品選定、マーケまで現場を引いた。肩書きより、現場を動かす4年。受託じゃなく、立ち上げを連続稼働させた。", img: "/images/story_bar.jpg" },
+  { year: "2021", tag: "Founder", sub: "From solo to crews.", title: "31歳で、大阪で 株式会社 encrews を創業。", body: "一人で動いていたUMEの仕事を、仲間と漕ぐ船に切り替えた。「en（縁・援・円）」でつながり、「crews（仲間・航海）」で進む。社名がそのまま、自分のやり方になった日。2021年4月1日、大阪。", img: "/images/story_2018.jpg" },
+  { year: "2021–2025", tag: "Builder", sub: "From Osaka to Tokyo.", title: "システム開発、人材事業、そして東京へ。", body: "法人化以降、大阪を拠点にシステム開発の受注を本格化。2023年に有料職業紹介事業を立ち上げ、2024年8月には東京支店を開設。2025年9月、本店を東京へ移転し、同年に人材2社目をローンチ。出版プロデュースは累計18冊・累計20万部に。一発の派手さより、エンジンを多重化していく時期。", img: "/images/story_2020.jpg" },
+  { year: "2026", tag: "Now", sub: "A bagel that travels.", title: "THE BAGEL、神楽坂でグランドオープン。", body: "韓国・米粉グルテンフリー・グラスフェッドバター。「味=日本 / タネ=フランス / 食感=韓国」の三点交差を、神楽坂の路地に置く。ベーグルの日(6/8)に、店を開ける。", img: "/images/story_2026.jpg" },
+];
+---
+<section id="story" class="py-32 md:py-48 border-t border-line">
+  <div class="container-x">
+    <div class="grid grid-cols-12 gap-8 mb-20 md:mb-28">
+      <div class="col-span-12 md:col-span-3">
+        <p class="text-eyebrow">02 — Chapters</p>
+      </div>
+      <div class="col-span-12 md:col-span-9">
+        <h2 class="text-display text-[36px] md:text-[52px] lg:text-[72px] text-ink max-w-4xl">
+          3.11で動き出して、<br/>
+          副業7つ全部失敗して、<br/>
+          それでも漕ぎ続けてきた。
+        </h2>
+        <p class="mt-6 text-[12px] tracking-tight text-ink-3 font-mono">— A founder's notebook, since 2011.</p>
+      </div>
+    </div>
+
+    <div class="space-y-32 md:space-y-48">
+      {chapters.map((c, i) => (
+        <article class={`grid grid-cols-12 gap-8 items-start ${i % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""}`}>
+          <div class="col-span-12 md:col-span-7">
+            <div class="aspect-[4/3] overflow-hidden bg-bg-2 relative group">
+              <img src={c.img} alt={c.title} class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100" loading="lazy"/>
+              <div class="absolute bottom-3 left-3 font-mono text-[9px] tracking-[0.2em] uppercase text-white/85 mix-blend-difference">
+                — {c.year} / {c.tag}
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-5">
+            <p class="text-[60px] md:text-[88px] lg:text-[112px] font-light tracking-[-0.04em] leading-none text-ink/[0.08] tabular-nums">{c.year}</p>
+            <p class="mt-2 font-mono text-[10px] tracking-[0.22em] uppercase text-ink-3">— {c.sub}</p>
+            <h3 class="mt-3 text-[24px] md:text-[34px] lg:text-[42px] font-light tracking-tight leading-[1.2] text-ink max-w-md">{c.title}</h3>
+            <p class="mt-6 text-[14px] md:text-[15px] leading-[2] text-ink-2 font-light max-w-md">{c.body}</p>
+          </div>
+        </article>
+      ))}
+
+      <article class="grid grid-cols-12 gap-8 items-start">
+        <div class="col-span-12 md:col-span-7">
+          <div class="aspect-[4/3] overflow-hidden border border-line flex items-center justify-center bg-white">
+            <p class="font-mono text-[14px] text-ink-3 tracking-tight text-center px-8">
+              [ to be written ]<br/>
+              <span class="text-[11px] mt-2 inline-block">— with you, perhaps.</span>
+            </p>
+          </div>
+          <div class="mt-3 font-mono text-[9px] tracking-[0.2em] uppercase text-ink-3">— Future / Open</div>
+        </div>
+        <div class="col-span-12 md:col-span-5">
+          <p class="text-[60px] md:text-[88px] lg:text-[112px] font-light tracking-[-0.04em] leading-none text-ink/[0.08] tabular-nums">Future</p>
+          <p class="mt-2 font-mono text-[10px] tracking-[0.22em] uppercase text-ink-3">— The next page is unwritten.</p>
+          <h3 class="mt-3 text-[24px] md:text-[34px] lg:text-[42px] font-light tracking-tight leading-[1.2] text-ink max-w-md">次の章は、まだ書かれていない。</h3>
+          <p class="mt-6 text-[14px] md:text-[15px] leading-[2] text-ink-2 font-light max-w-md">
+            ご縁で繋がる仲間と、次の航海へ。
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

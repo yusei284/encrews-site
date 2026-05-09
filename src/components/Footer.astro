@@ -1,0 +1,66 @@
+---
+const navLinks: Record<string, { label: string; href: string }[]> = {
+  encrews: [
+    { label: "Story",   href: "/#story" },
+    { label: "Work",    href: "/#work" },
+    { label: "Cases",   href: "/#cases" },
+    { label: "About",   href: "/about" },
+  ],
+  Sectors: [
+    { label: "IT & Product",   href: "/#work" },
+    { label: "Store Launch",   href: "/#work" },
+    { label: "Brand & PR",     href: "/#work" },
+    { label: "Publishing",     href: "/#work" },
+    { label: "Talent",         href: "/#work" },
+  ],
+  Connect: [
+    { label: "Contact", href: "/#contact" },
+  ],
+};
+const social = [
+  { name: "X",         href: "https://x.com/fukuchi_yusei" },
+  { name: "Instagram", href: "https://www.instagram.com/yusei_fukuchi/" },
+  { name: "Facebook",  href: "https://www.facebook.com/yusei.fukuchi?locale=ja_JP" },
+  { name: "note",      href: "https://note.com/encrews" },
+];
+---
+<footer class="pt-24 pb-10 border-t border-line">
+  <div class="container-x">
+    <div class="grid grid-cols-12 gap-8 pb-16 border-b border-line">
+      <div class="col-span-12 md:col-span-5">
+        <p class="text-[28px] md:text-[36px] font-light tracking-[-0.04em] leading-none text-ink">encrews</p>
+        <p class="mt-6 text-[11px] tracking-[0.18em] uppercase text-ink-3 font-medium">Built on en. Driven by crews.</p>
+        <p class="mt-10 text-[13px] leading-[1.9] text-ink-2 max-w-md font-light">
+          〒135-0021 東京都江東区白河3-18-11<br/>
+          <a href="mailto:y.fukuchi@encrews.co.jp" class="hover:text-ink transition-colors">y.fukuchi@encrews.co.jp</a>
+        </p>
+        <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[12px] text-ink-2">
+          {social.map((s) => (
+            <li>
+              <a href={s.href} target="_blank" rel="noopener noreferrer" class="hover:text-ink transition-colors inline-flex items-center gap-1">
+                {s.name}
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2V6" stroke="currentColor" stroke-width="1"/></svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {Object.entries(navLinks).map(([cat, items]) => (
+        <div class="col-span-6 md:col-span-2">
+          <p class="text-eyebrow mb-5">{cat}</p>
+          <ul class="space-y-3 text-[13px] font-light">
+            {items.map((it) => <li><a href={it.href} class="text-ink-2 hover:text-ink transition-colors">{it.label}</a></li>)}
+          </ul>
+        </div>
+      ))}
+      <div class="col-span-6 md:col-span-1"></div>
+    </div>
+    <div class="mt-10 flex flex-wrap items-center justify-between gap-6 text-[11px] tracking-tight text-ink-3 font-light">
+      <p>© 2026 encrews Inc.  ·  Founded 2021-04-01, Osaka.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-ink">Privacy</a>
+        <a href="#" class="hover:text-ink">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>

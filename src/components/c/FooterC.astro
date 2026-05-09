@@ -1,0 +1,38 @@
+---
+const cols = {
+  encrews:  ["story", "work", "cases", "journal"],
+  sectors:  ["it_product", "brand_pr", "store_launch", "talent"],
+  connect:  ["contact", "recruit", "press"],
+};
+---
+<footer class="pt-24 pb-10 border-t border-line">
+  <div class="container-x">
+    <div class="grid grid-cols-12 gap-8 pb-16 border-b border-line">
+      <div class="col-span-12 md:col-span-5 font-mono">
+        <p class="text-[24px] md:text-[32px] font-medium tracking-tight text-ink">encrews/</p>
+        <p class="mt-4 text-[11px] tracking-[0.18em] uppercase text-ink-3">$ build with people, not for them.</p>
+        <p class="mt-10 text-[12px] leading-[1.9] text-ink-2 font-sans font-light max-w-md">
+          〒xxx-xxxx 東京都xx区xx<br/>
+          contact@encrews.co.jp
+        </p>
+      </div>
+      {Object.entries(cols).map(([cat, items]) => (
+        <div class="col-span-6 md:col-span-2 font-mono">
+          <p class="text-[10px] tracking-[0.18em] uppercase text-ink-3 mb-4">// {cat}</p>
+          <ul class="space-y-3 text-[12px]">
+            {items.map((it) => <li><a href="#" class="text-ink-2 hover:text-ink transition-colors">{it}</a></li>)}
+          </ul>
+        </div>
+      ))}
+      <div class="col-span-6 md:col-span-1"></div>
+    </div>
+    <div class="mt-10 flex flex-wrap items-center justify-between gap-6 font-mono text-[11px] tracking-tight text-ink-3">
+      <p>© 2026 encrews.inc</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-ink">privacy</a>
+        <a href="#" class="hover:text-ink">terms</a>
+        <a href="#" class="hover:text-ink">sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>

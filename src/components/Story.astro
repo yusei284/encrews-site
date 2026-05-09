@@ -1,0 +1,64 @@
+---
+const chapters = [
+  { year: "2014", tag: "Engineer", title: "NTTグループ入社、エンジニアとして。", body: "学生時代から続けたコードを仕事に。インフラと業務システムの設計・開発に携わりながら、大企業の中で「人と事業」がどう動くかを観察し続けた4年間。" },
+  { year: "2018", tag: "Founder",  title: "独立。Encrews 創業。", body: "「自分の手で事業をつくる側に回りたい」と一念発起、退職して起業。IT支援を皮切りに、PR・人材・コミュニティと領域を広げていく。" },
+  { year: "2020", tag: "Operator", title: "IT × PR、横断型の支援を本格化。", body: "クライアント企業の事業立ち上げに、技術と発信の両輪で並走。「答えを売る」のではなく「一緒に漕ぎ出す」スタンスが定着していく。" },
+  { year: "2023", tag: "Builder",  title: "店舗型ビジネスへ。飲食店の立ち上げ支援を開始。", body: "デスクの向こうの事業から、街に立つ事業へ。店舗開発・採用・現場オペレーション、すべてに足を運んで関わる「リアル伴走」を始める。" },
+  { year: "2026", tag: "Now",      title: "THE BAGEL 神楽坂、グランドオープン。", body: "米粉×グラスフェッドバターの新ジャンル・ベーグル専門店。物件選定からブランディング、採用、運営まで、Encrewsが全工程に並走するフラッグシップ案件。" },
+];
+---
+<section id="story" class="py-32 md:py-48 border-t border-line">
+  <div class="container-x">
+    <div class="grid grid-cols-12 gap-8 mb-20 md:mb-28">
+      <div class="col-span-12 md:col-span-3">
+        <p class="text-eyebrow">02 — Story</p>
+      </div>
+      <div class="col-span-12 md:col-span-9">
+        <h2 class="text-display text-[36px] md:text-[52px] lg:text-[72px] text-ink max-w-4xl">
+          ひとりのエンジニアが、<br/>
+          街に立つ事業を、<br/>
+          つくる側に回るまで。
+        </h2>
+      </div>
+    </div>
+
+    <ol class="relative">
+      <div class="absolute left-[10.5%] md:left-[16.66%] top-0 bottom-0 w-px bg-line hidden md:block"></div>
+
+      {chapters.map((c, i) => (
+        <li class="grid grid-cols-12 gap-8 py-10 md:py-14 border-t border-line group relative">
+          <div class="col-span-3 md:col-span-2 flex items-start gap-3 relative">
+            <span class="absolute -left-[3px] top-2 w-[7px] h-[7px] rounded-full bg-ink hidden md:block"></span>
+            <p class="text-[14px] md:text-[16px] tabular-nums text-ink font-medium tracking-tight md:pl-6">{c.year}</p>
+          </div>
+          <div class="col-span-9 md:col-span-2">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-ink-3">— {c.tag}</p>
+          </div>
+          <div class="col-span-12 md:col-span-7">
+            <h3 class="text-[20px] md:text-[26px] lg:text-[32px] font-light tracking-tight leading-[1.3] text-ink mb-4">
+              {c.title}
+            </h3>
+            <p class="text-[14px] md:text-[15px] leading-[1.95] text-ink-2 max-w-2xl font-light">
+              {c.body}
+            </p>
+          </div>
+          <div class="col-span-12 md:col-span-1 flex md:justify-end items-start">
+            <span class="text-[10px] tabular-nums tracking-[0.15em] text-ink-3 font-mono">0{i + 1}.0</span>
+          </div>
+        </li>
+      ))}
+
+      <li class="grid grid-cols-12 gap-8 py-10 border-t border-line">
+        <div class="col-span-3 md:col-span-2 flex items-center gap-3">
+          <p class="text-[14px] md:text-[16px] tabular-nums text-ink-3 tracking-tight md:pl-6">→ Next</p>
+        </div>
+        <div class="col-span-9 md:col-span-10">
+          <p class="text-[14px] md:text-[16px] text-ink-3 font-light leading-[1.9] max-w-2xl">
+            次のページは、まだ書かれていません。<br/>
+            あなたの事業と、ご一緒できればと思っています。
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>

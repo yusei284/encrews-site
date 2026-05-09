@@ -1,0 +1,71 @@
+---
+const services = [
+  {
+    no: "01",
+    en: "IT Development",
+    jp: "IT開発・DX",
+    body: "Web・モバイルアプリ、業務システム、AI実装まで。要件整理から設計・開発・運用まで一貫対応。",
+  },
+  {
+    no: "02",
+    en: "Brand & PR",
+    jp: "ブランディング・PR",
+    body: "コーポレート／プロダクトのブランド設計、SNS戦略、メディアリレーション、コンテンツ制作。",
+  },
+  {
+    no: "03",
+    en: "Store Launch",
+    jp: "店舗開発・飲食店支援",
+    body: "出店戦略、内装ディレクション、メニュー開発、開業オペレーション設計、PRローンチまで。",
+  },
+  {
+    no: "04",
+    en: "Talent Growth",
+    jp: "人材育成・キャリア支援",
+    body: "新卒・中途のキャリア伴走、企業の組織開発、研修プログラム、採用ブランディング。",
+  },
+  {
+    no: "05",
+    en: "Community Design",
+    jp: "イベント・コミュニティ運営",
+    body: "ビジネス交流会、業界横断セミナー、リーダーシップコミュニティの企画・運営。",
+  },
+  {
+    no: "06",
+    en: "Logistics",
+    jp: "運送・物流",
+    body: "EC物流、定期配送、店舗間配送など、事業フェーズに応じた物流オペレーションの設計と実装。",
+  },
+];
+---
+<section id="services" class="py-32 md:py-48 bg-bg-2 border-t border-line">
+  <div class="container-x">
+    <div class="grid grid-cols-12 gap-8 mb-16 md:mb-24">
+      <div class="col-span-12 md:col-span-3">
+        <p class="text-[11px] tracking-[0.3em] uppercase text-ink-3">— Services</p>
+      </div>
+      <div class="col-span-12 md:col-span-9">
+        <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.15] tracking-tight font-light">
+          <span class="italic">六つ</span>の事業領域、<br/>
+          ひとつの<span class="italic">伴走</span>姿勢。
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
+      {services.map((s) => (
+        <div class="bg-bg-2 p-8 md:p-10 group hover:bg-white transition-colors duration-500">
+          <div class="flex items-center justify-between mb-8">
+            <span class="font-mono text-xs tracking-wider text-ink-3">{s.no}</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+              <path d="M4 16L16 4M16 4H8M16 4V12" stroke="currentColor" stroke-width="1"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl md:text-3xl italic font-light mb-2">{s.en}</h3>
+          <p class="text-sm text-ink-2 mb-6 tracking-wide">{s.jp}</p>
+          <p class="text-sm leading-relaxed text-ink-2 font-light">{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

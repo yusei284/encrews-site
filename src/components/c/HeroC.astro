@@ -1,0 +1,48 @@
+---
+---
+<section class="relative min-h-[100svh] flex flex-col justify-center pt-28 pb-16 md:pb-20 border-b border-line">
+  <div class="absolute inset-0 pointer-events-none opacity-[0.04]"
+    style="background-image:linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px); background-size: 80px 80px;"></div>
+
+  <div class="container-x w-full relative">
+    <div class="fade-in flex items-center gap-3 font-mono text-[11px] tracking-tight text-ink-3 mb-12">
+      <span class="text-emerald-700">●</span>
+      <span>encrews@tokyo</span>
+      <span class="opacity-40">~</span>
+      <span class="opacity-40">$</span>
+      <span>cat ./about.md</span>
+    </div>
+
+    <h1 class="fade-in-1 text-display text-[40px] sm:text-[60px] md:text-[80px] lg:text-[104px] xl:text-[120px] text-ink max-w-[1200px]">
+      Build with people,<br/>not for them.
+    </h1>
+
+    <div class="fade-in-2 mt-12 max-w-2xl">
+      <p class="text-[14px] leading-[1.95] text-ink-2 font-light">
+        元エンジニアが、人と店と事業を立ち上げる。<br/>
+        IT・PR・店舗開発・人材育成を横断する、伴走型のパートナー会社です。
+      </p>
+    </div>
+
+    <div class="fade-in-3 mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-px bg-line max-w-4xl">
+      {[
+        { k: "founded",  v: "2018-04" },
+        { k: "founder",  v: "@y_fukuchi" },
+        { k: "sectors",  v: "it · f&b · talent" },
+        { k: "now",      v: "the_bagel @ kagurazaka" },
+      ].map((kv) => (
+        <div class="bg-bg p-5 font-mono text-[12px]">
+          <p class="text-ink-3">{`${kv.k}:`}</p>
+          <p class="text-ink mt-1 break-all">{kv.v}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="fade-in-4 absolute bottom-5 left-0 right-0">
+    <div class="container-x flex items-center justify-between font-mono text-[10px] tracking-tight text-ink-3">
+      <span>./scroll-down --next=story</span>
+      <span class="hidden sm:inline">[01/05] ↓</span>
+    </div>
+  </div>
+</section>
