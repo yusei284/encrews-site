@@ -1,43 +1,55 @@
-# Astro Starter Kit: Minimal
+# encrews corporate site
+
+株式会社エンクルーズ（encrews）のコーポレートサイトです。
+
+> [!IMPORTANT]
+> **公開状態: 停止中（2026-07-13〜）**
+>
+> Cloudflare PagesプロジェクトとWeb用DNSレコードは意図的に削除されています。
+> `wrangler pages deploy` を実行すると再公開につながるため、明示的な承認なしにデプロイしないでください。
+
+公開停止の内容と復旧手順は [docs/operations.md](docs/operations.md) を参照してください。
+
+## 構成
+
+- Astro 6
+- Tailwind CSS 4
+- Node.js 22.12.0以上
+- 静的サイト（バックエンド・データベース・APIなし）
+- 本番採用デザイン: B（Documentary Story）
+
+主なページはトップ `/` と会社概要 `/about` です。`/b` はトップへの301リダイレクト、`/a` と `/c` は採用されなかったデザイン案です。
+
+## 開発
 
 ```sh
-npm create astro@latest -- --template minimal
+npm ci
+npm run dev
+npm run build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+`dist/` はビルド生成物です。直接編集しないでください。
 
-## 🚀 Project Structure
+## 本番トップの構成
 
-Inside of your Astro project, you'll see the following folders and files:
+`src/pages/index.astro` は次のコンポーネントを使用します。
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. `src/components/b/HeaderB.astro`
+2. `src/components/b/HeroB.astro`
+3. `src/components/b/NameMeaningB.astro`
+4. `src/components/b/StoryB.astro`
+5. `src/components/Work.astro`
+6. `src/components/Cases.astro`
+7. `src/components/b/CTAB.astro`
+8. `src/components/Footer.astro`
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+会社住所と連絡先は `src/pages/about.astro` と `src/components/Footer.astro` の両方に存在します。変更時は必ず整合させてください。
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## ソース管理
 
-Any static assets, like images, can be placed in the `public/` directory.
+- GitHub: `yusei284/encrews-site`
+- 通常ブランチ: `main`
+- ローカル作業コピー: `/Users/yusei/claude/encrews_site`
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+公開再開時は、コード・Git履歴・[運用手順](docs/operations.md)を照合してからCloudflareを再構築してください。
